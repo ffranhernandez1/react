@@ -96,11 +96,89 @@
   margin-top: 30px;
   background-color: #fff;
   padding: 10px;
+  text-align: center;
 }
 
 .boton-detalle:hover {
   background-color: #A8A8A8;
 }
 
+.imagenes-carrito {
+  width: 250px;
+  height: 250px;
+}
 
+.conjunto-carrito {
+  margin: 40px;
+}
 
+.item-carrito {
+  display: flex;
+}
+
+.contenedor-imagen-carrito {
+  margin: 0px 10px;
+}
+
+.contenedor-info-carrito {
+ margin: 0px 10px;
+ font-size: 20px;
+ font-family: 'Poppins', sans-serif;
+}
+
+.boton-vaciar {
+  font-size: 20px;
+  color: #000;
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.boton-eliminar {
+  font-size: 15px;
+  color: #000;
+  background-color: #fff;
+  padding: 13px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.precio-total {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.img-detalle {
+  height: 400px;
+  width: 400px;
+}
+
+.div-detalle-producto {
+  display: flex;
+  margin: 100px;
+  flex-direction: row;
+}
+
+.container-detalle {
+  padding: 10px;
+}
+
+.div-img-detalle {
+  margin: 0px 50px;
+}
+
+.div-info-detalle {
+  font-size: 20px;
+  margin: 0px 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 20px;
+}
+
+.boton-contador {
+  color: #000;
+  background-color: #fff;
+  margin: 0px 5px;
+  padding: 10px 15px;
+  font-size: 15px;
+}

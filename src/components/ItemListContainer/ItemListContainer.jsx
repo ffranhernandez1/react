@@ -1,26 +1,33 @@
 
 
 import { useEffect, useState } from "react"
-import { mockFetch } from "../../utils/mockFetch"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const {cid} = useParams()
 
     useEffect(()=>{
-
+        const db = getFirestore()
+        const queryCollection = collection(db, 'productos')
         if (cid) {
-            mockFetch()
-                .then(resp => setProductos(resp.filter(prod => prod.tipo === cid)))
+            
+            const queryFilter = query(
+                queryCollection,
+                where('tipo', '==', cid)
+            )
+
+            getDocs(queryFilter)
+                .then(resp => setProductos(resp.docs.map(producto => ({ id: producto.id, ...producto.data() }) ) ))
                 .catch(err => console.log(err))
-                .finally(()=> console.log('siempre y a lo ultimo')) 
-        }   else {
-            mockFetch()
-                .then(resp => setProductos(resp))
-                .catch(err => console.log(err))
-                .finally(()=> console.log('siempre y a lo ultimo'))   
+
+        }   else {  
+        
+                getDocs(queryCollection)
+                .then(resp => setProductos(resp.docs.map(producto => ({ id: producto.id, ...producto.data() }) ) ))
+                .catch(err => console.log(err))      
         }
 
         

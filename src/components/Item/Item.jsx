@@ -11,7 +11,7 @@ const Item = ({producto}) => {
                                             <img src={producto.foto} className="foto-producto" alt="imagen"/>
                                             <div className="div-detalle">
                                                 <Link to={ `/detail/${producto.id} `}>
-                                                <button className="boton-detalle">Detalle</button>
+                                                <button className="boton-detalle">Ver Producto</button>
                                                 </Link>
                                             </div>
                                     </div>

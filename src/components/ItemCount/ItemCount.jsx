@@ -1,13 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import useCount from "../hooks/useCount"
 
-export const ItemCount = ({initial=0, stock=5, min=1 }) => {
-
-    const onAdd = (cantidad) => {
-        console.log(cantidad)
-    }
+export const ItemCount = ({initial=1, stock=5, min=1, onAdd }) => {
     
-    const { contador, handleAdd, handleRemove, reset } = useCount(1, stock, initial )
+    const { contador, handleAdd, handleRemove, reset } = useCount(initial, stock, initial )
 
     function handleOnAdd() {
         onAdd(contador)
@@ -15,9 +11,9 @@ export const ItemCount = ({initial=0, stock=5, min=1 }) => {
 
 return (
     <div>
-        <h3>Contador: {contador}</h3>
-        <button onClick={handleAdd}> + </button>
-        <button onClick={handleRemove}> - </button>
-        <button onClick={handleOnAdd}> Agregar </button>
+        <h3>Cantidad de productos: {contador}</h3>
+        <button onClick={handleAdd} className="boton-contador"> + </button>
+        <button onClick={handleRemove} className="boton-contador"> - </button>
+        <button onClick={handleOnAdd} className="boton-contador"> Agregar </button>
     </div>
 )}

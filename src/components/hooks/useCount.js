@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const useCount = (initial=0, stock=5, min=1 ) => {
+const useCount = (initial=1, stock=5, min=1 ) => {
     if(initial < min || initial > stock) initial = min
     const [contador, setContador] = useState (0)
 
